@@ -11,7 +11,6 @@ const blogPostSchema = new Schema(
       value: { type: Number, required: true },
       unit: { type: String, required: true },
     },
-    content: { type: String, required: true },
     comments: [
       {
         name: { type: String, required: true },

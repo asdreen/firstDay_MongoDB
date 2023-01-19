@@ -10,6 +10,7 @@ import {
 import blogPostsRouter from "./api/blogPosts/index.js";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import commentsRouter from "./api/comments/index.js";
 
 dotenv.config();
 const server = express();
@@ -19,6 +20,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use("/blogPosts", blogPostsRouter);
+server.use("/comments", commentsRouter);
 
 server.use(badRequestHandler);
 server.use(unauthorizedHandler);
