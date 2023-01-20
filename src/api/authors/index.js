@@ -6,7 +6,6 @@ const authorsRouter = express.Router();
 authorsRouter.post("/", async (req, res, next) => {
   try {
     const newAuthor = new AuthorsModel(req.body);
-    // newAuthor.set("author.avatar", `https://ui-avatars.com/api/?name=${req.body.author.name}`)
     const { _id } = await newAuthor.save();
     res.status(201).send({ _id });
   } catch (error) {
